@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8081:8081"  # Para la consola H2 si decides cambiar el puerto
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_R2DBC_URL=r2dbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1
+      - SPRING_R2DBC_USERNAME=sa
+      - SPRING_R2DBC_PASSWORD=
+      - SPRING_H2_CONSOLE_ENABLED=true
+      - SPRING_H2_CONSOLE_PATH=/h2-console
+    container_name: nttdata-app
+    restart: unless-stopped

@@ -1,0 +1,18 @@
+# Get by date
+GET http://localhost:8080/api/v1/temperature/10-08-2025
+Accept: application/json
+
+###
+# Get by date as fahrenheit
+GET http://localhost:8080/api/v1/temperature/10-08-2025?unity=F
+Accept: application/json
+
+###
+# Get by a range of hours
+GET http://localhost:8080/api/v1/temperature/10-08-2025?hourMin=10&hourMax=22
+Accept: application/json
+
+###
+# Get by a range of hours as fahrenheit
+GET http://localhost:8080/api/v1/temperature/10-08-2025?hourMin=10&hourMax=22&unity=F
+Accept: application/json
